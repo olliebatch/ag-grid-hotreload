@@ -5,6 +5,7 @@ import './App.css'
 
 import { AllCommunityModule, ModuleRegistry, type ColDef } from 'ag-grid-community'; 
 import { AgGridReact, type CustomCellRendererProps } from 'ag-grid-react';
+import customRender from './customRenderer';
 
 // Register all Community features
 ModuleRegistry.registerModules([AllCommunityModule]);
@@ -13,13 +14,6 @@ interface IRow {
   testRender: string;
   failedCustomRenderer: { name: string; size: string };
 }
-
-
-const customRender = (params: CustomCellRendererProps) => {
-  return (
-    <div>Hello World</div>
-  );
-};
 
 function App() {
   const [rowData, setRowData] = useState<IRow[]>([
@@ -44,6 +38,7 @@ function App() {
 
   return (
     <div className='testRender'>
+      <div>Hello World</div>
     <AgGridReact
         rowData={rowData}
         columnDefs={colDefs}
