@@ -5,7 +5,7 @@ import './App.css'
 
 import { AllCommunityModule, ModuleRegistry, type ColDef } from 'ag-grid-community'; 
 import { AgGridReact, type CustomCellRendererProps } from 'ag-grid-react';
-import customRender from './customRenderer';
+import WeirdNameRender from './WeirdName';
 
 // Register all Community features
 ModuleRegistry.registerModules([AllCommunityModule]);
@@ -30,7 +30,7 @@ function App() {
       headerName: 'Test Failed Render',
       pinned: 'left',
       lockPinned: true,
-      cellRenderer: customRender,
+      cellRenderer: WeirdNameRender,
       autoHeight: true,
     },
     { field: 'testRender', headerName: 'Test Render' }
